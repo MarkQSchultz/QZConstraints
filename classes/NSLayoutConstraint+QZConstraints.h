@@ -61,4 +61,25 @@
  */
 + (NSLayoutConstraint *)constraintToVerticallyCenterSubview:(UIView *)subview;
 
+/*! Creates a constraint that constrains the width of the view
+ * \param view The view whose width you want to constraint
+ * \param width The width to which you would like to constrain your view
+ * \returns The constraint that constrains the width of the view
+ */
++ (NSLayoutConstraint *)constraintWithView:(UIView *)view width:(CGFloat)width;
+
+/*! Creates a constraint that constrains the height of the view
+ * \param view The view whose height you want to constraint
+ * \param height The height to which you would like to constrain your view
+ * \returns The constraint that constrains the height of the view
+ */
++ (NSLayoutConstraint *)constraintWithView:(UIView *)view height:(CGFloat)height;
+
+/*! Creates constraints that constrain the size of the view
+ * \param view The view whose size you want to constraint
+ * \param size The size to which you would like to constrain your view
+ * \returns The constraints that constrain the size of the view
+ */
++ (NSArray *)constraintsWithView:(UIView *)view size:(CGSize)size;
+
 @end

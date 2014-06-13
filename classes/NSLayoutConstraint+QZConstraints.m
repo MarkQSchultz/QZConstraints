@@ -74,4 +74,36 @@
     return [self constraintAligningSubview:subview onAttribute:NSLayoutAttributeCenterY];
 }
 
+
++ (NSLayoutConstraint *)constraintWithView:(UIView *)view width:(CGFloat)width
+{
+    return [NSLayoutConstraint constraintWithItem:view
+                                        attribute:NSLayoutAttributeWidth
+                                        relatedBy:NSLayoutRelationEqual
+                                           toItem:nil
+                                        attribute:NSLayoutAttributeNotAnAttribute
+                                       multiplier:1.0
+                                         constant:width];
+}
+
+
++ (NSLayoutConstraint *)constraintWithView:(UIView *)view height:(CGFloat)height
+{
+    return [NSLayoutConstraint constraintWithItem:view
+                                        attribute:NSLayoutAttributeHeight
+                                        relatedBy:NSLayoutRelationEqual
+                                           toItem:nil
+                                        attribute:NSLayoutAttributeNotAnAttribute
+                                       multiplier:1.0
+                                         constant:height];
+}
+
+
++ (NSArray *)constraintsWithView:(UIView *)view size:(CGSize)size
+{
+    NSLayoutConstraint *width = [self constraintWithView:view width:size.width];
+    NSLayoutConstraint *height = [self constraintWithView:view height:size.height];
+    return @[ width, height ];
+}
+
 @end
